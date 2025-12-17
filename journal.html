@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal — victorPauloGuzman</title>
+
+  <!-- Console-style font -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+
+    <a href='https://ko-fi.com/U7U71JQ539' target='_blank'>
+      <img height='26' style='border:0px;height:26px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6'
+        alt='Buy Me a Coffee at ko-fi.com' />
+    </a>
+  </nav>
+
+  <!-- TITLE -->
+  <div id="title-overlay">
+    <h1>victorPauloGuzman</h1>
+    <h2>Chef, Architect and a Visual Artist learning to code . . . </h2>
+  </div>
+
+  <!-- JOURNAL TEXT (NOW EMPTY — script types into it) -->
+  <div id="journal-overlay">
+    <div id="journal-text"></div>
+  </div>
+
+  <!-- BACKGROUND VISUAL -->
+  <script src="sketch.js"></script>
+
+  <!-- TYPEWRITER EFFECT -->
+  <script>
+    const journalContent = `
+
+Dic.12.2025
+ //-------------------- 10:22 -------------------------
+
+Processing all of this information might seem basic to others,
+but under the weight of unstable income and unresolved family fractures,
+everything feels heavier.
+
+If I’m going to learn a programming language, it has to serve a purpose.
+This can’t just be curiosity for curiosity’s sake.
+I need traction.
+I need momentum.
+Always upgrading — paulo++.
+
+Keeping my chin up is work.
+A few months ago, a dispute with a promoter around my VJ / artist gigs
+left a deeper mark than I expected.
+Not because of the money,
+but because I still struggle to be treated with basic respect.
+I get talked over.
+I get cornered.
+I get worn down.
+And lately, I’m tired of it.
+
+//-------------------- 22:00 -------------------------
+
+I keep trying to become my best version,
+but it feels like a balancing act I keep losing —
+tightening one area while another slips loose.
+
+Still, I know this:
+I have a strange, specific set of skills.
+An uncommon curiosity.
+A wide net of interests that, if aligned correctly,
+could carry my life somewhere meaningful.
+
+Not toward money — toward purpose.
+Toward a way of living well *through* my art.
+
+That’s why this journal exists.
+Not to perform.
+Not to convince.
+Just to speak — for whoever happens to listen.
+To speak out loud so I can feel heard, even if only by the page.
+
+I don’t often feel respected.
+I don’t feel heard at home.
+I ran from my family.
+My father doesn’t speak to me.
+I can’t see my daughter.
+It’s a lot to carry.
+
+And all I want, sometimes,
+is a single day that doesn’t feel like survival.
+Not escape.
+Not denial.
+Just the quiet assurance that my life isn’t ending,
+that it doesn’t dissolve into meaninglessness.
+
+I want to believe there’s more ahead.
+That this path leads somewhere worth reaching.
+
+
+
+
+Dic.11.2025 
+//--------------------- 08:58 ---------------------
+
+First day of a new job.  
+Work-from-home, hotel reservations, commission-based 
+a strange frontier to step into.  
+It will demand a kind of endurance I’m still learning:  
+pushing through my hesitation to speak up, 
+navigating other people’s confusion,  
+trying to find my own clear voice inside the noise.  
+Just a morning thought.
+
+As usual, I drifted into sleep around 1 AM.  
+Another night falling down the UX / web-development rabbit hole,  
+studying layouts, tools, and strange little details that 
+make the internet feel alive. Somewhere in that late-night fog, 
+a plan started forming:
+
+**Next year’s goal:**  
+build my own website from scratch —  
+a real home for my art, my code, my experiments.  
+And maybe, step by step, look for work as a UX designer or developer.  
+Not chasing status, not trying to be “the best.”  
+Just wanting to learn, to create,  
+to solve problems in ways that feel like magic.
+
+This field journal is part of that path.  
+A place to track what I’m learning,  
+to mark the small shifts and discoveries,  
+to keep myself moving toward something better.  
+A record of progress, mistakes, and knowledge —  
+breadcrumbs for the version of me who will read this later.
+
+
+Dic.10.2025
+// -------------------- 08:19 ------------------------------ 
+Today we went to bed at 1 am because I played around with my liquid simulation 
+code in P5.Js, now I'm at version 008 and still upgrading. Creating more 
+liquid flow motion not by adding speed but by adding stillness to the liquid 
+drop. As usual I crossed my girlfriend to San Diego to work and 
+returned home to play more with "liquidSim". I'm trying to reach out more
+people with my art, still trying a lot of web3 pages and trying to get commissions 
+out of anywhere I can find. 
+
+//-------------------- 22:04 -------------------------------
+It's night and I didn't sit down to program my p5.js sketches — they disconnected 
+our gas line and I had to resolve that issue. I did get a visit from a glitch 
+enthusiast friend: Luis (Happysnacks), and we ended up talking about 
+different glitches and AI tools. We're trying to reach people and money by doing
+live videos on different platforms, with the goal of getting paid for doing our art, 
+and trying to create a series of events with our brand: Liquid Glitch.
+`;
+
+    let i = 0;
+    const speed = 30;      // typing speed
+    const delay = 700;     // delay before typing starts
+
+    const out = document.getElementById("journal-text");
+
+    function typeWriterJournal() {
+      if (i < journalContent.length) {
+        out.textContent += journalContent.charAt(i);
+        i++;
+        setTimeout(typeWriterJournal, speed);
+      }
+    }
+
+    setTimeout(typeWriterJournal, delay);
+  </script>
+
+</body>
+
+</html>
