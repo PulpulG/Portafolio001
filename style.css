@@ -3,7 +3,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: scroll;
   background: transparent;
   font-family: 'Share Tech Mono', monospace;
   user-select: none;
@@ -63,7 +63,7 @@ canvas {
 
   padding-right: 12px;
   background: transparent;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 #journal-text {
