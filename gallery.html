@@ -33,40 +33,42 @@
     <h2>Gallery</h2>
   </div>
 
-  <!-- JOURNAL TEXT (EMPTY for typewriter) -->
-  <div id="journal-overlay">
-    <div id="journal-text"></div>
+  <!-- GALLERY CONTAINER -->
+  <div class="gallery-container">
+
+    <!-- Gallery Item 1: DNA Film Project - Terminal -->
+    <div class="gallery-item">
+      <h3 class="artwork-title">DNA FILM PROJECT — Terminal</h3>
+
+      <div class="artwork-preview" id="terminal-preview">
+        <div id="terminal-output"></div>
+        <div id="terminal-input-container" style="display: none;">
+          <span class="terminal-prompt">></span>
+          <input type="text" id="terminal-input" autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="artwork-description">
+        <p>An interactive terminal experience exploring identity, memory, and timeline corruption. Built in C++, this
+          piece simulates a CRT-style boot sequence where the user engages in a dialogue with an AI entity named DNA.
+        </p>
+        <p class="artwork-meta">
+          <strong>Medium:</strong> C++ Interactive Terminal Simulation<br>
+          <strong>Year:</strong> 2025<br>
+          <a href="dna-terminal.cpp" target="_blank" class="code-link">View Source Code →</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Add more gallery items here -->
+
   </div>
 
   <!-- BACKGROUND VISUAL -->
   <script src="sketch.js"></script>
 
-  <!-- TYPEWRITER SCRIPT -->
-  <script>
-    const typedText = `
-
-  "Visual experiments, code sketches, and evolving ideas.
-  Each piece is a step in the process — exploring motion, color, and form."
-  
-  // Add your gallery description or artwork links here
-`;
-
-    let index = 0;
-    const speed = 30;       // speed of typing
-    const startDelay = 800; // delay before starting
-
-    const target = document.getElementById("journal-text");
-
-    function typeWriter() {
-      if (index < typedText.length) {
-        target.textContent += typedText.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-
-    setTimeout(typeWriter, startDelay);
-  </script>
+  <!-- TERMINAL SIMULATION -->
+  <script src="dna-terminal-sim.js"></script>
 
 </body>
 

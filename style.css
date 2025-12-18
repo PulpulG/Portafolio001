@@ -1,13 +1,13 @@
 /* GLOBAL */
 html,
 body {
-  margin: 0;
-  padding: 0;
-  overflow: scroll;
-  background: transparent;
-  font-family: 'Share Tech Mono', monospace;
-  user-select: none;
-  color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    background: transparent;
+    font-family: 'Share Tech Mono', monospace;
+    user-select: none;
+    color: #fff;
 }
 
 /* FORCE ALL LINKS TO BE WHITE */
@@ -15,100 +15,282 @@ a,
 a:visited,
 a:hover,
 a:active {
-  color: #ffffff;
-  text-decoration: none;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* CANVAS BACKGROUND */
 canvas {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
 
 /* TITLE */
 #title-overlay {
-  position: fixed;
-  top: 40px;
-  left: 20px;
-  color: #ffffff;
-  z-index: 10;
-  pointer-events: none;
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    color: #ffffff;
+    z-index: 10;
+    pointer-events: none;
 }
 
 #title-overlay h1 {
-  margin: 0;
-  font-size: 3rem;
-  letter-spacing: 2px;
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 2px;
 }
 
 #title-overlay h2 {
-  margin-top: 5px;
-  font-size: 1.2rem;
-  opacity: 0.8;
+    margin-top: 5px;
+    font-size: 1.2rem;
+    opacity: 0.8;
 }
 
 /* Text AREA (scrollable) */
 #journal-overlay {
-  position: fixed;
-  bottom: 40px;
-  left: 20px;
-  right: 40px;
-  max-height: 80vh;
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    right: 40px;
+    max-height: 80vh;
 
-  z-index: 20;
-  overflow-y: scroll;
+    z-index: 20;
+    overflow-y: scroll;
 
-  padding-right: 12px;
-  background: transparent;
-  pointer-events: auto;
+    padding-right: 12px;
+    background: transparent;
+    pointer-events: auto;
 }
 
 #journal-text {
-  white-space: pre-wrap;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  user-select: none;
-  color: #ffffff;
-  pointer-events: none;
+    white-space: pre-wrap;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    user-select: none;
+    color: #ffffff;
+    pointer-events: none;
 }
 
 /* INVISIBLE SCROLLBAR */
 #journal-overlay::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
 
 #journal-overlay::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 #journal-overlay::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
 }
 
 /* Navigation MENU */
 nav {
-  position: fixed;
-  top: 10px;
-  right: 40px;
-  z-index: 30;
+    position: fixed;
+    top: 10px;
+    right: 40px;
+    z-index: 30;
 
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 nav a {
-  color: #ffffff;
-  text-decoration: none;
-  opacity: 0.8;
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.8;
 }
 
 nav a:hover {
-  opacity: 1;
-  text-decoration: underline;
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ========================================
+   GALLERY STYLES
+   ======================================== */
+
+/* Gallery Container - Single Column Grid */
+.gallery-container {
+    position: relative;
+    z-index: 5;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 180px 40px 80px 40px;
+    background: #000000;
+    min-height: 100vh;
+}
+
+/* Individual Gallery Item Card */
+.gallery-item {
+    background: linear-gradient(135deg, rgba(20, 20, 25, 0.95) 0%, rgba(10, 10, 15, 0.98) 100%);
+    border: 1px solid rgba(0, 255, 100, 0.2);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 60px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item:hover {
+    border-color: rgba(0, 255, 100, 0.5);
+    box-shadow: 0 8px 40px rgba(0, 255, 100, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Artwork Title */
+.artwork-title {
+    font-size: 1.8rem;
+    color: #00ff64;
+    margin: 0 0 20px 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Artwork Preview Container */
+.artwork-preview {
+    background: #000000;
+    border: 2px solid rgba(0, 255, 100, 0.3);
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 25px;
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+    font-family: 'Share Tech Mono', monospace;
+    box-shadow: inset 0 0 30px rgba(0, 255, 100, 0.05);
+    position: relative;
+}
+
+.artwork-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        repeating-linear-gradient(0deg,
+            rgba(0, 255, 100, 0.03) 0px,
+            rgba(0, 255, 100, 0.03) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Terminal-specific styles */
+#terminal-output {
+    color: #00ff64;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 8px rgba(0, 255, 100, 0.5);
+}
+
+#terminal-input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.terminal-prompt {
+    color: #00ff64;
+    margin-right: 8px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0, 255, 100, 0.5);
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: #00ff64;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.95rem;
+    outline: none;
+    flex: 1;
+    text-shadow: 0 0 8px rgba(0, 255, 100, 0.5);
+    caret-color: #00ff64;
+}
+
+/* Custom scrollbar for preview */
+.artwork-preview::-webkit-scrollbar {
+    width: 8px;
+}
+
+.artwork-preview::-webkit-scrollbar-track {
+    background: rgba(0, 255, 100, 0.05);
+}
+
+.artwork-preview::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 100, 0.3);
+    border-radius: 4px;
+}
+
+.artwork-preview::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 100, 0.5);
+}
+
+/* Artwork Description */
+.artwork-description {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.artwork-description p {
+    margin: 0 0 15px 0;
+}
+
+.artwork-meta {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    margin-top: 20px;
+}
+
+.code-link {
+    color: #00ff64 !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.code-link:hover {
+    color: #00ffaa !important;
+    text-decoration: underline;
+    transform: translateX(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-container {
+        padding: 140px 20px 60px 20px;
+    }
+
+    .gallery-item {
+        padding: 20px;
+    }
+
+    .artwork-title {
+        font-size: 1.4rem;
+    }
+
+    .artwork-preview {
+        min-height: 300px;
+    }
 }
