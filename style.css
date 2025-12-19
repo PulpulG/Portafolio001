@@ -124,7 +124,7 @@ nav a:hover {
     max-width: 900px;
     margin: 0 auto;
     padding: 180px 40px 80px 40px;
-    background: #000000;
+    background: #000000 rgba(0, 255, 100, 0.05);
     min-height: 100vh;
 }
 
